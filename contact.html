@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <!-- Custom Styles -->
+  <style>
+    /* Header Section */
+    .header {
+      background-image: url('images/logo.jpg'); /* Replace with your image path */
+      background-size: cover;
+      background-position: center;
+      height: 300px; /* Adjust height as needed */
+      display: flex;
+      align-items: flex-end; /* Align navbar to the bottom */
+      justify-content: center;
+      color: white;
+      text-align: center;
+      position: relative; /* For positioning the navbar */
+    }
+    .navbar {
+      background-color: rgba(255, 255, 255); /* White background with slight transparency */
+      width: 100%; /* Full width */
+      padding: 10px 0;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    }
+    .navbar-nav .nav-link {
+      color: #333; /* Dark gray text for links */
+      font-weight: bold;
+      margin: 0 15px; /* Spacing between links */
+      transition: color 0.3s ease;
+    }
+    .navbar-nav .nav-link:hover {
+      color: orange; /* Blue color on hover */
+    }
+    .navbar-toggler {
+      border-color: #333; /* Dark gray border for the toggle button */
+    }
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(51, 51, 51, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+
+    /* Contact Section */
+    .contact-section {
+      padding: 80px 0;
+      background: linear-gradient(to right, white, rgb(250, 210, 140));
+    }
+    .contact-section h2 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #343a40; /* Dark gray color for headings */
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    .contact-section .contact-info {
+        background: linear-gradient(to right, white, rgb(250, 210, 140));
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+      margin-bottom: 30px;
+    }
+    .contact-section .contact-info h3 {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #343a40; /* Dark gray color for headings */
+      margin-bottom: 20px;
+    }
+    .contact-section .contact-info p {
+      font-size: 1rem;
+      color: #6c757d; /* Gray color for text */
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+    .contact-section .contact-info .icon {
+      font-size: 1.5rem;
+      color: orange; /* Orange color for icons */
+      margin-right: 10px;
+    }
+    .contact-section .feedback-form {
+      background-color: #ffffff; /* White background */
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .contact-section .feedback-form h3 {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #343a40; /* Dark gray color for headings */
+      margin-bottom: 20px;
+    }
+    .contact-section .feedback-form .form-control {
+      margin-bottom: 20px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+      padding: 10px;
+    }
+    .contact-section .feedback-form .btn-primary {
+      background-color: orange;
+      border: none;
+      padding: 10px 30px;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+    .contact-section .feedback-form .btn-primary:hover {
+      background-color: darkorange;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header Section -->
+  <header class="header">
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="strategy.html">Implementation Strategy</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="program.html">Programs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ark.html">Ark Partners</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="gallery.html">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <div class="row">
+        <!-- Contact Information -->
+        <div class="col-md-6">
+          <div class="contact-info">
+            <h3><i class="fas fa-map-marker-alt icon"></i>ADDRESS</h3>
+            <p>Windsor Close, Alozi Estate Rd, Nairobi, Kenya</p>
+            <h3><i class="fas fa-phone-alt icon"></i>CONTACT US</h3>
+            <p>Tel: 0723-960 092, 0721-607198, 0735-288 114</p>
+            <p>P.O. BOX 2340-00202 Nairobi</p>
+            <h3><i class="fas fa-envelope icon"></i>EMAIL</h3>
+            <p>admin@cotrr-africa.org</p>
+          </div>
+        </div>
+        <!-- Feedback Form -->
+        <div class="col-md-6">
+          <div class="feedback-form">
+            <h3>FEEDBACK FORM</h3>
+            <p>Drop us a line as we look forward to hearing from you.</p>
+            <form>
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Your Name" required>
+              </div>
+              <div class="form-group">
+                <input type="email" class="form-control" placeholder="Your Email" required>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Subject" required>
+              </div>
+              <div class="form-group">
+                <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer style="background-color: #333; color: #fff; padding: 20px 0; text-align: center;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+        <div style="flex: 1; min-width: 200px; margin: 10px;">
+          <h3 style="color: #fff;">About Us</h3>
+          <p style="font-size: 14px; color: #ccc;">We are dedicated to providing the best service and products to our customers. Learn more about our mission and values.</p>
+        </div>
+        <div style="flex: 1; min-width: 200px; margin: 10px;">
+          <h3 style="color: #fff;">Quick Links</h3>
+          <ul style="list-style: none; padding: 0;">
+            <li><a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Home</a></li>
+            <li><a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Services</a></li>
+            <li><a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Blog</a></li>
+            <li><a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Contact</a></li>
+          </ul>
+        </div>
+        <div style="flex: 1; min-width: 200px; margin: 10px;">
+          <h3 style="color: #fff;">Contact Us</h3>
+          <p style="font-size: 14px; color: #ccc;">Email: info@example.com<br>Phone: +123 456 7890<br>Address: 123 Main St, City, Country</p>
+        </div>
+      </div>
+      <div style="border-top: 1px solid #444; margin-top: 20px; padding-top: 10px;">
+        <p style="font-size: 12px; color: #ccc;">&copy; 2023 Your Company Name. All rights reserved.</p>
+        <div style="margin-top: 10px;">
+          <a href="#" style="color: #ccc; text-decoration: none; margin: 0 10px; font-size: 14px;">Privacy Policy</a>
+          <a href="#" style="color: #ccc; text-decoration: none; margin: 0 10px; font-size: 14px;">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donate Button in Carousel</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <!-- Custom Styles -->
+  <style>
+    /* Header Section */
+    .header {
+      background-image: url('images/logo.jpg'); /* Replace with your image path */
+      background-size: cover;
+      background-position: center;
+      height: 300px; /* Adjust height as needed */
+      display: flex;
+      align-items: flex-end; /* Align navbar to the bottom */
+      justify-content: center;
+      color: white;
+      text-align: center;
+      position: relative; /* For positioning the navbar */
+    }
+    .navbar {
+      background-color: rgba(255, 255, 255); /* White background with slight transparency */
+      width: 100%; /* Full width */
+      padding: 10px 0;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    }
+    .navbar-nav .nav-link {
+      color: #333; /* Dark gray text for links */
+      font-weight: bold;
+      margin: 0 15px; /* Spacing between links */
+      transition: color 0.3s ease;
+    }
+    .navbar-nav .nav-link:hover {
+      color: orange; /* Blue color on hover */
+    }
+    .navbar-toggler {
+      border-color: #333; /* Dark gray border for the toggle button */
+    }
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(51, 51, 51, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+
+    /* Carousel Section */
+    .carousel-section {
+      padding: 50px 0;
+      background-color: #f8f9fa; /* Light background for the carousel section */
+      position: relative; /* For positioning the donate button */
+    }
+    .carousel-item img {
+      width: 100%;
+      height: 500px; /* Adjust height as needed */
+      object-fit: cover; /* Ensures images cover the area without distortion */
+    }
+    .carousel-caption {
+      position: absolute;
+      bottom: 20px; /* Position the caption at the bottom */
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+    }
+    .carousel-caption .btn-donate {
+      background-color:rgb(250, 200, 105);
+      color: white;
+      font-size: 1.2rem;
+      padding: 10px 30px;
+      border-radius: 5px;
+      border: none;
+      transition: background-color 0.3s ease;
+    }
+    .carousel-caption .btn-donate:hover {
+      background-color: orange; /* Darker blue on hover */
+    }
+
+    /* Mission and Vision Section */
+    .mission-vision-section {
+      padding: 80px 0;
+      background-color: #ffffff; /* White background for the section */
+    }
+    .mission-vision-section h2 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 30px;
+      color: #343a40; /* Dark gray color for headings */
+      text-align: center;
+    }
+    .mission-vision-section .card {
+      border: none;
+      position: relative;
+      overflow: hidden;
+      height: 300px; /* Adjust height as needed */
+    }
+    .mission-vision-section .card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Ensures images cover the area without distortion */
+      transition: transform 0.3s ease;
+    }
+    .mission-vision-section .card:hover img {
+      transform: scale(1.1); /* Zoom effect on hover */
+    }
+    .mission-vision-section .card .card-body {
+      position: absolute;
+      bottom: -100%; /* Hide content initially */
+      left: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.2); /* Semi-transparent black background */
+      color: white;
+      padding: 20px;
+      transition: bottom 0.3s ease;
+    }
+    .mission-vision-section .card:hover .card-body {
+      bottom: 0; /* Show content on hover */
+    }
+    .mission-vision-section .card-title {
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .mission-vision-section .card-text {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    /* Core Values Section */
+    .core-values-section {
+      padding: 80px 0;
+      background-color: #f8f9fa; /* Light background for the section */
+    }
+    .core-values-section h2 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 50px;
+      color: #343a40; /* Dark gray color for headings */
+      text-align: center;
+    }
+    .core-values-section .value-card {
+      background-color: #ffffff; /* White background for cards */
+      border: none;
+      border-radius: 10px;
+      padding: 30px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .core-values-section .value-card:hover {
+      transform: translateY(-10px); /* Lift effect on hover */
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Subtle shadow on hover */
+    }
+    .core-values-section .value-icon {
+      font-size: 3rem;
+      color: orange; /* Blue color for icons */
+      margin-bottom: 20px;
+    }
+    .core-values-section .value-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #343a40; /* Dark gray color for titles */
+      margin-bottom: 15px;
+    }
+    .core-values-section .value-description {
+      font-size: 1rem;
+      color: #6c757d; /* Gray color for descriptions */
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header Section -->
+  <header class="header">
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="strategy.html">Implementation Strategy</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="program.html">Programs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ark.html">Ark Partners</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="gallery.html">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Carousel Section -->
+  <section class="carousel-section">
+    <div class="container">
+      <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel">
+        <!-- Carousel Indicators -->
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="3" aria-label="Slide 3"></button>
+        </div>
+
+        <!-- Carousel Items -->
+        <div class="carousel-inner">
+          <div class="carousel-item" data-bs-interval="5000">
+            <img src="images/img1.jpg" class="d-block w-100" alt="Image 0"> <!-- Replace with your image -->
+            <div class="carousel-caption">
+              <button class="btn btn-donate">Donate Now</button>
+            </div>
+          </div>
+          <div class="carousel-item active" data-bs-interval="5000"> <!-- 5 seconds per slide -->
+            <img src="images/img2.jpg" class="d-block w-100" alt="Image 1"> <!-- Replace with your image -->
+            <div class="carousel-caption">
+              <button class="btn btn-donate">Donate Now</button>
+            </div>
+          </div>
+          <div class="carousel-item" data-bs-interval="5000">
+            <img src="images/water.jpg" class="d-block w-100" alt="Image 2"> <!-- Replace with your image -->
+            <div class="carousel-caption">
+              <button class="btn btn-donate">Donate Now</button>
+            </div>
+          </div>
+          <div class="carousel-item" data-bs-interval="5000">
+            <img src="images/farm.jpg" class="d-block w-100" alt="Image 3"> <!-- Replace with your image -->
+            <div class="carousel-caption">
+              <button class="btn btn-donate">Donate Now</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Carousel Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#programCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#programCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission and Vision Section -->
+  <section class="mission-vision-section">
+    <div class="container">
+      <h2>Our Mission and Vision</h2>
+      <div class="row">
+        <!-- Mission Card -->
+        <div class="col-md-6 mb-4">
+          <div class="card">
+            <img src="images/community.jpg" alt="Mission Image"> <!-- Replace with your image -->
+            <div class="card-body">
+              <h3 class="card-title">Our Mission</h3>
+              <p class="card-text">
+                Our mission is to empower individuals and communities through innovative programs and partnerships, fostering sustainable development and positive change.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Vision Card -->
+        <div class="col-md-6 mb-4">
+          <div class="card">
+            <img src="images/another.jpg" alt="Vision Image"> <!-- Replace with your image -->
+            <div class="card-body">
+              <h3 class="card-title">Our Vision</h3>
+              <p class="card-text">
+                We envision a world where every individual has access to opportunities that enable them to thrive, creating a brighter and more equitable future for all.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Values Section -->
+  <section class="core-values-section">
+    <div class="container">
+      <h2>Our Core Values</h2>
+      <div class="row">
+        <!-- Professionalism -->
+        <div class="col-md-4 mb-4">
+          <div class="value-card">
+            <i class="fas fa-user-tie value-icon"></i> <!-- Font Awesome icon -->
+            <h3 class="value-title">Professionalism</h3>
+            <p class="value-description">
+              We uphold the highest standards of professionalism in all our endeavors, ensuring quality and excellence.
+            </p>
+          </div>
+        </div>
+        <!-- Accountability -->
+        <div class="col-md-4 mb-4">
+          <div class="value-card">
+            <i class="fas fa-balance-scale value-icon"></i> <!-- Font Awesome icon -->
+            <h3 class="value-title">Accountability</h3>
+            <p class="value-description">
+              We take responsibility for our actions and decisions, ensuring transparency and trust in all our operations.
+            </p>
+          </div>
+        </div>
+        <!-- Innovation and Creativity -->
+        <div class="col-md-4 mb-4">
+          <div class="value-card">
+            <i class="fas fa-lightbulb value-icon"></i> <!-- Font Awesome icon -->
+            <h3 class="value-title">Innovation & Creativity</h3>
+            <p class="value-description">
+              We embrace innovation and creativity to develop unique solutions that address complex challenges.
+            </p>
+          </div>
+        </div>
+        <!-- Inclusiveness -->
+        <div class="col-md-4 mb-4">
+          <div class="value-card">
+            <i class="fas fa-users value-icon"></i> <!-- Font Awesome icon -->
+            <h3 class="value-title">Inclusiveness</h3>
+            <p class="value-description">
+              We promote inclusiveness, ensuring that everyone has a voice and an opportunity to contribute.
+            </p>
+          </div>
+        </div>
+        <!-- Teamwork -->
+        <div class="col-md-4 mb-4">
+          <div class="value-card">
+            <i class="fas fa-handshake value-icon"></i> <!-- Font Awesome icon -->
+            <h3 class="value-title">Teamwork</h3>
+            <p class="value-description">
+              We believe in the power of teamwork, collaborating effectively to achieve shared goals.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background-color: #333; color: #fff; padding: 20px 0; text-align: center;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+            <div style="flex: 1; min-width: 200px; margin: 10px;">
+                <h3 style="color: #fff;">About Us</h3>
+                <p style="font-size: 14px; color: #ccc;">We are dedicated to providing the best service and products to our customers. Learn more about our mission and values.</p>
+            </div>
+            <div style="flex: 1; min-width: 200px; margin: 10px;">
+                <h3 style="color: #fff;">Quick Links</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li><a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Home</a></li>
+                    <li><a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Services</a></li>
+                    <li><a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Blog</a></li>
+                    <li><a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Contact</a></li>
+                </ul>
+            </div>
+            <div style="flex: 1; min-width: 200px; margin: 10px;">
+                <h3 style="color: #fff;">Contact Us</h3>
+                <p style="font-size: 14px; color: #ccc;">Email: info@example.com<br>Phone: +123 456 7890<br>Address: 123 Main St, City, Country</p>
+            </div>
+        </div>
+        <div style="border-top: 1px solid #444; margin-top: 20px; padding-top: 10px;">
+            <p style="font-size: 12px; color: #ccc;">&copy; 2023 Your Company Name. All rights reserved.</p>
+            <div style="margin-top: 10px;">
+                <a href="#" style="color: #ccc; text-decoration: none; margin: 0 10px; font-size: 14px;">Privacy Policy</a>
+                <a href="#" style="color: #ccc; text-decoration: none; margin: 0 10px; font-size: 14px;">Terms of Service</a>
+            </div>
+        </div>
+    </div>
+  </footer>
+</body>
+</html>
