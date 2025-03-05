@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <!-- Custom Styles -->
+  <style>
+    /* Header Section */
+    .header {
+      background-image: url('images/logo.jpg'); /* Replace with your image path */
+      background-size: cover;
+      background-position: center;
+      height: 300px; /* Adjust height as needed */
+      display: flex;
+      align-items: flex-end; /* Align navbar to the bottom */
+      justify-content: center;
+      color: white;
+      text-align: center;
+      position: relative; /* For positioning the navbar */
+    }
+    .navbar {
+      background-color: rgba(255, 255, 255); /* White background with slight transparency */
+      width: 100%; /* Full width */
+      padding: 10px 0;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    }
+    .navbar-nav .nav-link {
+      color: #333; /* Dark gray text for links */
+      font-weight: bold;
+      margin: 0 15px; /* Spacing between links */
+      transition: color 0.3s ease;
+    }
+    .navbar-nav .nav-link:hover {
+      color: orange; /* Blue color on hover */
+    }
+    .navbar-toggler {
+      border-color: #333; /* Dark gray border for the toggle button */
+    }
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(51, 51, 51, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+
+    /* About Us Section */
+    .about-section {
+      padding: 80px 0;
+      background: linear-gradient(to right, white, rgb(250, 210, 140));
+      img{
+        height: 600px;
+      }
+    }
+    .about-section h2 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 30px;
+      color: #343a40; /* Dark gray color for headings */
+      text-align: center;
+    }
+    .about-section p {
+      font-size: 1.1rem;
+      color: #6c757d; /* Gray color for text */
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+    .about-section img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+    .about-section .btn-primary {
+      background-color: orange;
+      border: none;
+      padding: 10px 30px;
+      font-size: 1.1rem;
+      transition: background-color 0.3s ease;
+    }
+    .about-section .btn-primary:hover {
+      background-color: darkorange;
+    }
+
+    /* Areas Section */
+    .areas-section {
+      padding: 80px 0;
+      background-color: #ffffff; /* White background */
+    }
+    .areas-section h2 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 50px;
+      color: #343a40; /* Dark gray color for headings */
+      text-align: center;
+    }
+    .areas-section .area-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .areas-section .area-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+    .areas-section .area-card img {
+      width: 100%;
+      height: 300px; /* Adjust height as needed */
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    .areas-section .area-card:hover img {
+      transform: scale(1.1);
+    }
+    .areas-section .area-card .card-body {
+      position: absolute;
+      bottom: -100%; /* Hide content initially */
+      left: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.2); /* Semi-transparent black background */
+      color: white;
+      padding: 20px;
+      transition: bottom 0.3s ease;
+    }
+    .areas-section .area-card:hover .card-body {
+      bottom: 0; /* Show content on hover */
+    }
+    .areas-section .area-card .card-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .areas-section .area-card .card-text {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header Section -->
+  <header class="header">
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="strategy.html">Implementation Strategy</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="program.html">Programs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ark.html">Ark Partners</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="gallery.html">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- About Us Section -->
+  <section class="about-section">
+    <div class="container">
+      <h2>About Us</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <img src="images/logo.jpg" style="height: 500px;" alt="About Us Image"> <!-- Replace with your image -->
+        </div>
+        <div class="col-md-6">
+          <p>
+            COTRR is a women-founded, women-led grassroots National Non-Government Organisation (NGO) registered in Kenya in 2007. The organization works directly with communities and families, and is committed to bridging community development gaps through its integrated approach by supporting household activities for resilience building, resource and livelihood enhancement for families of the last mile.
+          </p>
+          <p>
+            In line with its mission, COTRR has endeavored to support communities to address the myriad of threats and risks to food and livelihood security by facilitating the implementation of an integrated livelihood support and resilience program. The program goal is to support targeted communities become less vulnerable to social, economic, environmental, cultural and health risks. The organization works towards harnessing unrealized economic potential, unutilized indigenous resources and knowledge. These interventions are undertaken in line with community needs and priorities.
+          </p>
+          <p>
+            We are currently in 4 Counties: Kiambu, Narok, Kajiado, and Murang’a.
+          </p>
+          <a href="#areas" class="btn btn-primary">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Areas Section -->
+  <section class="areas-section" id="areas">
+    <div class="container">
+      <h2>Areas We Serve</h2>
+      <div class="row">
+        <!-- Kiambu -->
+        <div class="col-md-3">
+          <div class="area-card">
+            <img src="images/kiambu.jpg" alt="Kiambu"> <!-- Replace with your image -->
+            <div class="card-body">
+              <h3 class="card-title">Kiambu</h3>
+              <p class="card-text">
+                Kiambu County is known for its agricultural productivity. COTRR works here to enhance food security and support local farmers.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Narok -->
+        <div class="col-md-3">
+          <div class="area-card">
+            <img src="images/narok.jpg" alt="Narok"> <!-- Replace with your image -->
+            <div class="card-body">
+              <h3 class="card-title">Narok</h3>
+              <p class="card-text">
+                Narok is home to the Maasai community. COTRR focuses on empowering women and improving access to education and healthcare.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Kajiado -->
+        <div class="col-md-3">
+          <div class="area-card">
+            <img src="images/kajiado.jpg" alt="Kajiado"> <!-- Replace with your image -->
+            <div class="card-body">
+              <h3 class="card-title">Kajiado</h3>
+              <p class="card-text">
+                In Kajiado, COTRR supports pastoralist communities by promoting sustainable livelihoods and environmental conservation.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Murang’a -->
+        <div class="col-md-3">
+          <div class="area-card">
+            <img src="images/muraga.jpg" alt="Murang’a"> <!-- Replace with your image -->
+            <div class="card-body">
+              <h3 class="card-title">Murang’a</h3>
+              <p class="card-text">
+                Murang’a is a hub for coffee farming. COTRR works to improve agricultural practices and increase farmers' incomes.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer style="background-color: #333; color: #fff; padding: 20px 0; text-align: center;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+        <div style="flex: 1; min-width: 200px; margin: 10px;">
+          <h3 style="color: #fff;">About Us</h3>
+          <p style="font-size: 14px; color: #ccc;">We are dedicated to providing the best service and products to our customers. Learn more about our mission and values.</p>
+        </div>
+        <div style="flex: 1; min-width: 200px; margin: 10px;">
+          <h3 style="color: #fff;">Quick Links</h3>
+          <ul style="list-style: none; padding: 0;">
+            <li><a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Home</a></li>
+            <li><a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Services</a></li>
+            <li><a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Blog</a></li>
+            <li><a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Contact</a></li>
+          </ul>
+        </div>
+        <div style="flex: 1; min-width: 200px; margin: 10px;">
+          <h3 style="color: #fff;">Contact Us</h3>
+          <p style="font-size: 14px; color: #ccc;">Email: info@example.com<br>Phone: +123 456 7890<br>Address: 123 Main St, City, Country</p>
+        </div>
+      </div>
+      <div style="border-top: 1px solid #444; margin-top: 20px; padding-top: 10px;">
+        <p style="font-size: 12px; color: #ccc;">&copy; 2023 Your Company Name. All rights reserved.</p>
+        <div style="margin-top: 10px;">
+          <a href="#" style="color: #ccc; text-decoration: none; margin: 0 10px; font-size: 14px;">Privacy Policy</a>
+          <a href="#" style="color: #ccc; text-decoration: none; margin: 0 10px; font-size: 14px;">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

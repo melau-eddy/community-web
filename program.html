@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programs</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <!-- Custom Styles -->
+  <style>
+    /* Header Section */
+    .header {
+      background-image: url('images/logo.jpg'); /* Replace with your image path */
+      background-size: cover;
+      background-position: center;
+      height: 300px; /* Adjust height as needed */
+      display: flex;
+      align-items: flex-end; /* Align navbar to the bottom */
+      justify-content: center;
+      color: white;
+      text-align: center;
+      position: relative; /* For positioning the navbar */
+    }
+    .navbar {
+      background-color: rgba(255, 255, 255); /* White background with slight transparency */
+      width: 100%; /* Full width */
+      padding: 10px 0;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    }
+    .navbar-nav .nav-link {
+      color: #333; /* Dark gray text for links */
+      font-weight: bold;
+      margin: 0 15px; /* Spacing between links */
+      transition: color 0.3s ease;
+    }
+    .navbar-nav .nav-link:hover {
+      color: orange; /* Blue color on hover */
+    }
+    .navbar-toggler {
+      border-color: #333; /* Dark gray border for the toggle button */
+    }
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(51, 51, 51, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+
+    /* Programs Section */
+    .programs-section {
+      padding: 80px 0;
+      background: linear-gradient(to right, white, rgb(250, 210, 140));
+    }
+    .programs-section .sidebar {
+        background: linear-gradient(to right, white, rgb(250, 210, 140));
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .programs-section .sidebar h3 {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #343a40; /* Dark gray color for headings */
+      margin-bottom: 20px;
+    }
+    .programs-section .sidebar .nav-link {
+      color: #6c757d; /* Gray color for links */
+      font-size: 1rem;
+      padding: 10px 15px;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .programs-section .sidebar .nav-link:hover {
+      background-color: orange; /* Orange background on hover */
+      color: white; /* White text on hover */
+    }
+    .programs-section .sidebar .nav-link.active {
+      background-color: orange; /* Orange background for active link */
+      color: white; /* White text for active link */
+    }
+    .programs-section .content {
+      background-color: #ffffff; /* White background */
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .programs-section .content h2 {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #343a40; /* Dark gray color for headings */
+      margin-bottom: 20px;
+    }
+    .programs-section .content img {
+      width: 100%;
+      height: 300px; /* Adjust height as needed */
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+    .programs-section .content p {
+      font-size: 1rem;
+      color: #6c757d; /* Gray color for text */
+      line-height: 1.8;
+    }
+
+    /* Projects Section */
+    .projects-section {
+      padding: 80px 0;
+      background: linear-gradient(to right, white, rgb(250, 210, 140));
+    }
+    .projects-section h2 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #343a40; /* Dark gray color for headings */
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    .projects-section .project-card {
+      background-color: #f8f9fa; /* Light background */
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .projects-section .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+    .projects-section .project-card h3 {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #343a40; /* Dark gray color for headings */
+      margin-bottom: 15px;
+    }
+    .projects-section .project-card p {
+      font-size: 1rem;
+      color: #6c757d; /* Gray color for text */
+      line-height: 1.6;
+    }
+
+    /* Partners Section */
+    .partners-section {
+      padding: 80px 0;
+      background: linear-gradient(to right, white, rgb(250, 210, 140));
+    }
+    .partners-section h2 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #343a40; /* Dark gray color for headings */
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    .partners-section .partner-logo {
+      width: 150px; /* Adjust size as needed */
+      height: auto;
+      margin: 20px;
+      transition: transform 0.3s ease;
+    }
+    .partners-section .partner-logo:hover {
+      transform: scale(1.1); /* Zoom effect on hover */
+    }
+    /* Partners Section */
+.partners-section {
+    padding: 80px 0;
+    background-color: #ffffff; /* White background */
+  }
+  .partners-section h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #343a40; /* Dark gray color for headings */
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  .partners-section .partner-card {
+    background-color: #f8f9fa; /* Light background */
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .partners-section .partner-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  .partners-section .partner-logo {
+    margin-bottom: 20px;
+    color: orange; /* Icon color */
+  }
+  .partners-section .partner-card h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #343a40; /* Dark gray color for headings */
+    margin-bottom: 0;
+  }
+  /* Carousel Section */
+.carousel-section {
+    padding: 50px 0;
+    background-color: #f8f9fa; /* Light background */
+  }
+  .carousel-item img {
+    width: 100%;
+    height: 500px; /* Adjust height as needed */
+    object-fit: cover; /* Ensures images cover the area without distortion */
+    border-radius: 10px; /* Rounded corners */
+  }
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    border-radius: 50%; /* Circular buttons */
+    padding: 10px;
+  }
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 5%; /* Adjust width of controls */
+  }
+  
+  /* Program Description */
+  .program-content {
+    padding: 20px;
+    background-color: #ffffff; /* White background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin-top: 20px;
+  }
+  .program-content h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #343a40; /* Dark gray color for headings */
+    margin-bottom: 20px;
+  }
+  .program-content h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #343a40; /* Dark gray color for headings */
+    margin-bottom: 15px;
+  }
+  .program-content p {
+    font-size: 1rem;
+    color: #6c757d; /* Gray color for text */
+    line-height: 1.8;
+    margin-bottom: 20px;
+  }
+  .program-content ul {
+    list-style-type: disc; /* Bullet points */
+    padding-left: 20px;
+    margin-bottom: 20px;
+  }
+  .program-content ul li {
+    font-size: 1rem;
+    color: #6c757d; /* Gray color for text */
+    line-height: 1.8;
+  }
+  </style>
+</head>
+<body>
+  <!-- Header Section -->
+  <header class="header">
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="strategy.html">Implementation Strategy</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="program.html">Programs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ark.html">Ark Partners</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="gallery.html">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Programs Section -->
+  <section class="programs-section">
+    <div class="container">
+      <div class="row">
+        <!-- Sidebar -->
+        <div class="col-md-4">
+          <div class="sidebar">
+            <h3>Our Programmes</h3>
+            <nav class="nav flex-column">
+              <a class="nav-link active" data-target="program1">Strengthening Community Structures for Resilience</a>
+              <a class="nav-link" data-target="program2">Community Managed Sustainable Livelihoods</a>
+              <a class="nav-link" data-target="program3">Community Based Care for Children with Disabilities</a>
+              <a class="nav-link" data-target="program4">Education Sponsorship and Advocacy</a>
+              <a class="nav-link" data-target="program5">Gender and Environment</a>
+            </nav>
+          </div>
+        </div>
+        <!-- Content -->
+        <div class="col-md-8">
+          <div class="content">
+            <div id="program1" class="program-content">
+                <h2>Strengthening Community Structures for Resilience</h2>
+                
+                <!-- Carousel Section -->
+                <div id="programCarousel" class="carousel slide" data-bs-ride="carousel">
+                  <!-- Carousel Indicators -->
+                  <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#programCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#programCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#programCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#programCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                  </div>
+              
+                  <!-- Carousel Items -->
+                  <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="5000">
+                      <img src="images/img1.jpg" class="d-block w-100" alt="Image 1"> <!-- Replace with your image -->
+                    </div>
+                    <div class="carousel-item" data-bs-interval="5000">
+                      <img src="images/img2.jpg" class="d-block w-100" alt="Image 2"> <!-- Replace with your image -->
+                    </div>
+                    <div class="carousel-item" data-bs-interval="5000">
+                      <img src="images/img3.jpg" class="d-block w-100" alt="Image 3"> <!-- Replace with your image -->
+                    </div>
+                    <div class="carousel-item" data-bs-interval="5000">
+                      <img src="images/img4.jpg" class="d-block w-100" alt="Image 4"> <!-- Replace with your image -->
+                    </div>
+                  </div>
+              
+                  <!-- Carousel Controls -->
+                  <button class="carousel-control-prev" type="button" data-bs-target="#programCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#programCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                </div>
+              
+                <!-- Program Description -->
+                <p>
+                  This programmatic priority is the foundation on which COTRR lays all other priority areas. The community structures definition that COTRR focuses on is:
+                </p>
+                <blockquote class="blockquote">
+                  <p class="mb-0">
+                    Community structures are community-led systems and mechanisms used by communities through which members of the community, community-based groups, and organizations interact, coordinate, and deliver responses to development challenges and day-to-day needs facing their communities.
+                  </p>
+                </blockquote>
+                <p>
+                  COTRR's approach focuses on promoting the development of capable, informed, and well-coordinated communities and community-based groups and organizations. The approach brings together a broad range of community actors, enabling them to contribute as equals alongside other actors towards sustainable community development and the resilience of communities and households to various shocks.
+                </p>
+                <p>
+                  Our past experience has taught us that sustainable community development and resilience to shocks can be achieved only through developing the role of key affected populations and communities in the design, delivery, monitoring, evaluation, and improvement of initiatives meant to change their situations.
+                </p>
+                <p>
+                  With this in mind, COTRR engages communities through the volunteer and farmer promoter system to create awareness on risk reduction, identify community hazards, and empower the volunteers to drive the community resilience-building vehicle. The volunteers are taken through various TOT trainings that enable them to put into perspective the impact of daily actions in destroying or enhancing their capacity.
+                </p>
+                <p>
+                  The group's capacity enhancement is tailored to focus on the following areas:
+                </p>
+                <ul>
+                  <li>Community organization</li>
+                  <li>Group dynamics and conflict resolution</li>
+                  <li>Project and financial management</li>
+                  <li>Basics in Community Managed Disaster Risk Reduction (CMDRR)</li>
+                  <li>Community Managed Natural Resource Management (CMNRM)</li>
+                  <li>Community-level education and advocacy campaigns</li>
+                </ul>
+                <p>
+                  Program activities are participatory, designed to ensure building on indigenous knowledge and skills for sustainable community-owned livelihood enhancement initiatives.
+                </p>
+                <p>
+                  The organization strives to build local capacities of existing community groups to adapt and adopt the best practices generated by national research bodies.
+                </p>
+            </div>
+
+
+
+
+
+                        <!-- Program 2 -->
+            <div id="program2" class="program-content" style="display: none;">
+                <h2>Community Managed Sustainable Livelihoods</h2>
+                
+                <!-- Carousel Section -->
+                <div id="programCarousel2" class="carousel slide" data-bs-ride="carousel">
+                <!-- Carousel Indicators -->
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#programCarousel2" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#programCarousel2" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#programCarousel2" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#programCarousel2" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                    <button type="button" data-bs-target="#programCarousel2" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                </div>
+            
+                <!-- Carousel Items -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="5000">
+                    <img src="images/img5.jpg" class="d-block w-100" alt="Image 1"> <!-- Replace with your image -->
+                    </div>
+                    <div class="carousel-item" data-bs-interval="5000">
+                    <img src="images/img6.jpg" class="d-block w-100" alt="Image 2"> <!-- Replace with your image -->
+                    </div>
+                    <div class="carousel-item" data-bs-interval="5000">
+                    <img src="images/img7.jpg" class="d-block w-100" alt="Image 3"> <!-- Replace with your image -->
+                    </div>
+                    <div class="carousel-item" data-bs-interval="5000">
+                    <img src="images/img8.jpg" class="d-block w-100" alt="Image 4"> <!-- Replace with your image -->
+                    </div>
+                    <div class="carousel-item" data-bs-interval="5000">
+                    <img src="images/img9.jpg" class="d-block w-100" alt="Image 5"> <!-- Replace with your image -->
+                    </div>
+                </div>
+            
+                <!-- Carousel Controls -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#programCarousel2" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#programCarousel2" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+                </div>
+            
+                <!-- Program Description -->
+                <p>
+                The overall goal under this program theme is to diversify and promote climate-smart agro-practices among resource-limited smallholder farmer groups and agro-pastoralists for strengthened livelihood resilience.
+                </p>
+                <h3>Key Areas of Interventions:</h3>
+                <ul>
+                <li>Support for undertaking alternative livelihoods while addressing threats to food and water insecurity.</li>
+                <li>Build capacities to boost incomes and cope with drought to reduce vulnerability to risks and other threats to livelihood security.</li>
+                <li>Assist smallholder farmers to diversify their livelihoods through the use of available community resources, indigenous knowledge, and skills while tapping into relevant innovations.</li>
+                <li>Participatory on-farm demonstrations on climate-smart livelihood enhancement interventions to help build community resilience to food insecurity and other risks to community survival, targeting small-scale farmers.</li>
+                <li>Increase household resilience to drought through water harvesting and agroforestry initiatives.</li>
+                <li>Promote the growing of drought-resistant and economically viable indigenous food crops, high-value shrubs, and fruit trees.</li>
+                </ul>
+            </div>
+
+
+
+
+                        <!-- Program 3 -->
+            <div id="program3" class="program-content" style="display: none;">
+                <h2>Community Based Care for Children with Disabilities</h2>
+                
+                <!-- Carousel Section -->
+                <div id="programCarousel3" class="carousel slide" data-bs-ride="carousel">
+                <!-- Carousel Indicators -->
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#programCarousel3" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#programCarousel3" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#programCarousel3" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#programCarousel3" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                    <button type="button" data-bs-target="#programCarousel3" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                </div>
+            
+                <!-- Carousel Items -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="5000">
+                    <img src="images/img10.jpg" class="d-block w-100" alt="Image 1"> <!-- Replace with your image -->
+                    </div>
+                    <div class="carousel-item" data-bs-interval="5000">
+                    <img src="images/img11.jpg" class="d-block w-100" alt="Image 2"> <!-- Replace with your image -->
+                    </div>
+                    <div class="carousel-item" data-bs-interval="5000">
+                    <img src="images/img12.jpg" class="d-block w-100" alt="Image 3"> <!-- Replace with your image -->
+                    </div>
+                    <div class="carousel-item" data-bs-interval="5000">
+                    <img src="images/img13.jpg" class="d-block w-100" alt="Image 4"> <!-- Replace with your image -->
+                    </div>
+                    <div class="carousel-item" data-bs-interval="5000">
+                    <img src="images/img14.jpg" class="d-block w-100" alt="Image 5"> <!-- Replace with your image -->
+                    </div>
+                </div>
+            
+                <!-- Carousel Controls -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#programCarousel3" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#programCarousel3" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+                </div>
+            
+                <!-- Program Description -->
+                <p>
+                COTRR appreciates and acknowledges that disability is a consequence of institutional, attitudinal, and environmental barriers, which exclude children with special needs from participating in and benefiting from basic services, social benefits, and development.
+                </p>
+                <p>
+                Recognizing the burden of disability on affected families, COTRR, in partnership with SEP (Special Education Professionals) and a network of community volunteers, has been working with over 70 rural resource-limited families taking care of children with special needs in Lari, Kiambu, and Kimathi, Murang’a. Through community awareness creation and education, the initiative strives to positively influence community attitudes towards children with special needs to reduce stigma and discrimination while supporting affected families to live fulfilled lives through referrals, psychosocial support, mobility, nutrition, and livelihood-enhancing interventions.
+                </p>
+                <h3>Strategic Pillar Objectives:</h3>
+                <ul>
+                <li>Increase access to comprehensive home-based care and psychological support for Special Needs Children and their guardians.</li>
+                <li>Provide nutritional and livelihood support interventions for families with special needs children.</li>
+                <li>Facilitate access to physiotherapy services and provide mobility aids for Children with Special Needs.</li>
+                <li>Facilitate awareness creation on the plight of Special Needs Children and their families and strengthen referral systems to increase care and support for children with special needs.</li>
+                <li>Equip special cases who are above 15 years with life skills to help them earn their living and be independent.</li>
+                <li>Lobby for a rehabilitation center with necessary facilities, a therapist, and a Special Needs Teacher where SNCs can access the much-needed services.</li>
+                </ul>
+            </div>
+
+
+
+
+            <!-- Program 4 -->
+            <div id="program4" class="program-content" style="display: none;">
+                <h2>Education Sponsorship and Advocacy</h2>
+                
+                <!-- Carousel Section -->
+                <div id="programCarousel4" class="carousel slide" data-bs-ride="carousel">
+                <!-- Carousel Indicators -->
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#programCarousel4" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#programCarousel4" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#programCarousel4" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#programCarousel4" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                </div>
+            
+                <!-- Carousel Items -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="5000">
+                    <img src="images/img15.jpg" class="d-block w-100" alt="Image 1"> <!-- Replace with your image -->
+                    </div>
+                    <div class="carousel-item" data-bs-interval="5000">
+                    <img src="images/img16.jpg" class="d-block w-100" alt="Image 2"> <!-- Replace with your image -->
+                    </div>
+                    <div class="carousel-item" data-bs-interval="5000">
+                    <img src="images/img17.jpg" class="d-block w-100" alt="Image 3"> <!-- Replace with your image -->
+                    </div>
+                    <div class="carousel-item" data-bs-interval="5000">
+                    <img src="images/img18.jpg" class="d-block w-100" alt="Image 4"> <!-- Replace with your image -->
+                    </div>
+                </div>
+            
+                <!-- Carousel Controls -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#programCarousel4" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#programCarousel4" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+                </div>
+            
+                <!-- Program Description -->
+                <p>
+                Education in Kenya is recognized as a primary means of sustainable economic development, social development, and social mobility. The introduction of Free Primary School Education (FPE) led to an increase in enrolment across Kenya. Yet, despite the gains of FPE, there are still groups in many rural areas across Kenya where enrolment and transition into secondary and tertiary levels remain a challenge. Out-of-pocket payments, including the purchase of school uniforms and other costs not covered by the government, incurred by families living in extreme poverty, reduce access to schooling for many children.
+                </p>
+                <p>
+                COTRR collaborates with identified community structures to ensure that needy and deserving students who would otherwise never access quality education are identified and supported to realize their potential. Placement services, mentoring, and coaching programs are provided to ensure the sponsored children can discuss any challenges in their path.
+                </p>
+                <p>
+                Some indigenous cultural practices have proved to be a major hindrance to education in Kenya, especially in nomadic pastoralist communities. Female Genital Mutilation (FGM), which is against human rights, has forced many girls into child marriages, causing them to drop out of school while their reproductive health is compromised.
+                </p>
+                <p>
+                COTRR works with various stakeholders through community participatory approaches, including Community Advocacy and Education Campaigns on FGM and Child Marriages, to support pastoralist children's access to education, ensuring that their right to education is protected and respected.
+                </p>
+                <p>
+                In working with affected communities, COTRR employs culturally sensitive strategies to facilitate community dialogues to disseminate information that encourages positive community norms and the abandonment of retrogressive cultural practices that infringe on children’s right to education. COTRR further educates the community on enacted laws on Children’s rights, human rights, the Anti-FGM Act (Kenya) 2011, and the Kenyan Constitution.
+                </p>
+            </div>
+
+
+
+
+                        <!-- Program 5 -->
+            <div id="program5" class="program-content" style="display: none;">
+                <h2>Gender and Environment</h2>
+                
+                <!-- Carousel Section -->
+                <div id="programCarousel5" class="carousel slide" data-bs-ride="carousel">
+                <!-- Carousel Indicators -->
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#programCarousel5" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#programCarousel5" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#programCarousel5" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#programCarousel5" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                </div>
+            
+                <!-- Carousel Items -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="5000">
+                    <img src="images/img19.jpg" class="d-block w-100" alt="Image 1"> <!-- Replace with your image -->
+                    </div>
+                    <div class="carousel-item" data-bs-interval="5000">
+                    <img src="images/img20.jpg" class="d-block w-100" alt="Image 2"> <!-- Replace with your image -->
+                    </div>
+                    <div class="carousel-item" data-bs-interval="5000">
+                    <img src="images/img21.jpg" class="d-block w-100" alt="Image 3"> <!-- Replace with your image -->
+                    </div>
+                    <div class="carousel-item" data-bs-interval="5000">
+                    <img src="images/img22.jpg" class="d-block w-100" alt="Image 4"> <!-- Replace with your image -->
+                    </div>
+                    <div class="carousel-item" data-bs-interval="5000">
+                        <img src="images/img23.jpg" class="d-block w-100" alt="Image 4"> <!-- Replace with your image -->
+                    </div>
+                </div>
+            
+                <!-- Carousel Controls -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#programCarousel5" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#programCarousel5" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+                </div>
+            
+                <!-- Program Description -->
+                <p>
+                In Kiambu, Murang’a, Narok, and Kajiado counties, community members continue to depend on the environment to provide for their families. This has resulted in overexploitation of resources, soil degradation, and exposure to risks in their everyday engagements. As poverty levels in these rural communities skyrocket due to depleted resources, women often take up the household responsibilities as breadwinners and caregivers. They interact more with the environment, harnessing every possible resource for survival. This makes women more vulnerable to risks, exposing them to poor health, illiteracy, limited access to services, and underrepresentation in policy issues.
+                </p>
+                <p>
+                Conflicts over land use and human-wildlife encounters, especially in wildlife conservation areas, have resulted in the loss of lives, livestock, and exposure of women to domestic violence due to delays in performing their expected cultural roles.
+                </p>
+                <p>
+                COTRR focuses on empowering women to actively participate not only in harnessing environmental resources but also in the revitalization of the environment for current and future generations. COTRR partners with women groups in the four counties using a participatory approach, utilizing available indigenous knowledge, and encouraging women’s voices in developing sustainable strategies for the implementation of climate security and biodiversity policies, as well as grassroots socio-enterprises for economic empowerment.
+                </p>
+                <p>
+                The women groups are supported with Income Generating Activities (IGAs) and engage in group savings/table banking, establishing community safety nets for their families and building resilient communities.
+                </p>
+                <p>
+                The women groups are involved as FETs (Female Engagement Teams) to create forums for community dialogues and storytelling, as well as pathways for socio-economic and governance empowerment, to entrench their role in sustainable social development and environmental conservation efforts.
+                </p>
+            </div>
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="projects-section">
+    <div class="container">
+      <h2>Projects</h2>
+      <div class="row">
+        <!-- Project Cards -->
+        <div class="col-md-6">
+          <div class="project-card">
+            <h3>Dairy Goat Upgrading Project</h3>
+            <p>
+              Supporting smallholder farmers in Central Kenya to improve dairy goat breeds for better milk production and income generation.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="project-card">
+            <h3>Indigenous Chicken Rearing</h3>
+            <p>
+              Enhancing livelihoods among resource-limited households through sustainable indigenous chicken farming.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="project-card">
+            <h3>Livelihood Enhancement with Indigenous Sheep</h3>
+            <p>
+              Empowering Suswa/Naarkurto communities in Narok North through indigenous sheep rearing.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="project-card">
+            <h3>High-Value Shrubs and Fruit Farming</h3>
+            <p>
+              Promoting climate-resilient farming practices among resource-limited farmers in Central Kenya.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="project-card">
+            <h3>Rainwater Harvesting</h3>
+            <p>
+              Supporting pastoralist women-headed and orphaned households with rainwater harvesting systems.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="project-card">
+            <h3>Integrated Support for Children with Special Needs</h3>
+            <p>
+              Providing holistic support for children with disabilities and their families.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="project-card">
+            <h3>Community Advocacy on FGM and Child Marriages</h3>
+            <p>
+              Raising awareness and advocating against harmful practices in Suswa and Naarkurto communities.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="project-card">
+            <h3>Biodiversity Restoration and Beekeeping</h3>
+            <p>
+              Restoring biodiversity and empowering communities through beekeeping and Climate Smart Agriculture.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="project-card">
+            <h3>Women Economic Empowerment</h3>
+            <p>
+              Empowering women through agribusiness and group Savings and Internal Lending Mechanisms (SILM).
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partners Section -->
+<section class="partners-section">
+    <div class="container">
+      <h2>Our Partners</h2>
+      <div class="row">
+        <!-- Partner 1 -->
+        <div class="col-md-4 mb-4">
+          <div class="partner-card">
+            <div class="partner-logo">
+              <i class="fas fa-handshake fa-3x"></i> <!-- Placeholder icon -->
+            </div>
+            <h3>Friends of Kenya, Switzerland</h3>
+          </div>
+        </div>
+        <!-- Partner 2 -->
+        <div class="col-md-4 mb-4">
+          <div class="partner-card">
+            <div class="partner-logo">
+              <i class="fas fa-school fa-3x"></i> <!-- Placeholder icon -->
+            </div>
+            <h3>Kids to School, Netherlands</h3>
+          </div>
+        </div>
+        <!-- Partner 3 -->
+        <div class="col-md-4 mb-4">
+          <div class="partner-card">
+            <div class="partner-logo">
+              <i class="fas fa-tint fa-3x"></i> <!-- Placeholder icon -->
+            </div>
+            <h3>Goba Water, Switzerland</h3>
+          </div>
+        </div>
+        <!-- Partner 4 -->
+        <div class="col-md-4 mb-4">
+          <div class="partner-card">
+            <div class="partner-logo">
+              <i class="fas fa-church fa-3x"></i> <!-- Placeholder icon -->
+            </div>
+            <h3>Catholic Church of St. Gallen, Switzerland</h3>
+          </div>
+        </div>
+        <!-- Partner 5 -->
+        <div class="col-md-4 mb-4">
+          <div class="partner-card">
+            <div class="partner-logo">
+              <i class="fas fa-globe-africa fa-3x"></i> <!-- Placeholder icon -->
+            </div>
+            <h3>Charity for Africa, Austria</h3>
+          </div>
+        </div>
+        <!-- Partner 6 -->
+        <div class="col-md-4 mb-4">
+          <div class="partner-card">
+            <div class="partner-logo">
+              <i class="fas fa-people-arrows fa-3x"></i> <!-- Placeholder icon -->
+            </div>
+            <h3>Rotary Clubs in Switzerland</h3>
+          </div>
+        </div>
+        <!-- Partner 7 -->
+        <div class="col-md-4 mb-4">
+          <div class="partner-card">
+            <div class="partner-logo">
+              <i class="fas fa-book fa-3x"></i> <!-- Placeholder icon -->
+            </div>
+            <h3>Anne Frank Foundation, Switzerland</h3>
+          </div>
+        </div>
+        <!-- Partner 8 -->
+        <div class="col-md-4 mb-4">
+          <div class="partner-card">
+            <div class="partner-logo">
+              <i class="fas fa-hand-holding-heart fa-3x"></i> <!-- Placeholder icon -->
+            </div>
+            <h3>The JDW Legacy Fund, Kenya</h3>
+          </div>
+        </div>
+        <!-- Partner 9 -->
+        <div class="col-md-4 mb-4">
+          <div class="partner-card">
+            <div class="partner-logo">
+              <i class="fas fa-truck-moving fa-3x"></i> <!-- Placeholder icon -->
+            </div>
+            <h3>Miva, Switzerland</h3>
+          </div>
+        </div>
+        <!-- Partner 10 -->
+        <div class="col-md-4 mb-4">
+          <div class="partner-card">
+            <div class="partner-logo">
+              <i class="fas fa-seedling fa-3x"></i> <!-- Placeholder icon -->
+            </div>
+            <h3>The Bouwkamp Foundation, Netherlands</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <footer style="background-color: #333; color: #fff; padding: 20px 0; text-align: center;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+            <div style="flex: 1; min-width: 200px; margin: 10px;">
+                <h3 style="color: #fff;">About Us</h3>
+                <p style="font-size: 14px; color: #ccc;">We are dedicated to providing the best service and products to our customers. Learn more about our mission and values.</p>
+            </div>
+            <div style="flex: 1; min-width: 200px; margin: 10px;">
+                <h3 style="color: #fff;">Quick Links</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li><a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Home</a></li>
+                    <li><a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Services</a></li>
+                    <li><a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Blog</a></li>
+                    <li><a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Contact</a></li>
+                </ul>
+            </div>
+            <div style="flex: 1; min-width: 200px; margin: 10px;">
+                <h3 style="color: #fff;">Contact Us</h3>
+                <p style="font-size: 14px; color: #ccc;">Email: info@example.com<br>Phone: +123 456 7890<br>Address: 123 Main St, City, Country</p>
+            </div>
+        </div>
+        <div style="border-top: 1px solid #444; margin-top: 20px; padding-top: 10px;">
+            <p style="font-size: 12px; color: #ccc;">&copy; 2023 Your Company Name. All rights reserved.</p>
+            <div style="margin-top: 10px;">
+                <a href="#" style="color: #ccc; text-decoration: none; margin: 0 10px; font-size: 14px;">Privacy Policy</a>
+                <a href="#" style="color: #ccc; text-decoration: none; margin: 0 10px; font-size: 14px;">Terms of Service</a>
+            </div>
+        </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom Script -->
+  <script>
+    // JavaScript to handle sidebar navigation
+    const navLinks = document.querySelectorAll('.sidebar .nav-link');
+    const programContents = document.querySelectorAll('.program-content');
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = link.getAttribute('data-target');
+
+        // Remove active class from all links
+        navLinks.forEach(navLink => navLink.classList.remove('active'));
+        // Add active class to the clicked link
+        link.classList.add('active');
+
+        // Hide all program contents
+        programContents.forEach(content => content.style.display = 'none');
+        // Show the selected program content
+        document.getElementById(target).style.display = 'block';
+      });
+    });
+  </script>
+</body>
+</html>
+     
