@@ -3,11 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gallery</title>
+  <title>Donate to Us</title>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Lightbox CSS -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
   <!-- Font Awesome Icons -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <!-- Custom Styles -->
@@ -38,7 +36,7 @@
       transition: color 0.3s ease;
     }
     .navbar-nav .nav-link:hover {
-      color: orange; /* Blue color on hover */
+      color: orange; /* Orange color on hover */
     }
     .navbar-toggler {
       border-color: #333; /* Dark gray border for the toggle button */
@@ -47,59 +45,57 @@
       background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(51, 51, 51, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
     }
 
-    /* Gallery Section */
-    .gallery-section {
+    /* Donations Section */
+    .donations-section {
       padding: 80px 0;
-      background: linear-gradient(to right, white, rgb(250, 210, 140));
+      background-color: #f8f9fa; /* Light background for the section */
     }
-    .gallery-section h2 {
+    .donations-section h2 {
       font-size: 2.5rem;
       font-weight: bold;
+      margin-bottom: 30px;
       color: #343a40; /* Dark gray color for headings */
       text-align: center;
-      margin-bottom: 50px;
     }
-    .gallery-section .gallery-item {
-      position: relative;
-      overflow: hidden;
+    .donations-section .donation-card {
+      background-color: #ffffff; /* White background for cards */
+      border: none;
       border-radius: 10px;
-      margin-bottom: 30px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      text-align: center;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .gallery-section .gallery-item:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    .donations-section .donation-card:hover {
+      transform: translateY(-10px); /* Lift effect on hover */
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Subtle shadow on hover */
     }
-    .gallery-section .gallery-item img {
-      width: 100%;
-      height: 250px; /* Adjust height as needed */
-      object-fit: cover;
-      transition: transform 0.3s ease;
+    .donations-section .donation-icon {
+      font-size: 3rem;
+      color: orange; /* Orange color for icons */
+      margin-bottom: 20px;
     }
-    .gallery-section .gallery-item:hover img {
-      transform: scale(1.1);
+    .donations-section .donation-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #343a40; /* Dark gray color for titles */
+      margin-bottom: 15px;
     }
-    .gallery-section .gallery-item .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+    .donations-section .donation-description {
+      font-size: 1rem;
+      color: #6c757d; /* Gray color for descriptions */
+      line-height: 1.6;
+    }
+    .donations-section .btn-donate {
+      background-color: rgb(250, 200, 105); /* Orange background */
       color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      transition: opacity 0.3s ease;
+      font-size: 1.2rem;
+      padding: 10px 30px;
+      border-radius: 5px;
+      border: none;
+      transition: background-color 0.3s ease;
     }
-    .gallery-section .gallery-item:hover .overlay {
-      opacity: 1;
-    }
-    .gallery-section .gallery-item .overlay i {
-      font-size: 2rem;
-      color: white;
+    .donations-section .btn-donate:hover {
+      background-color: orange; /* Darker orange on hover */
     }
   </style>
 </head>
@@ -124,13 +120,13 @@
               <a class="nav-link" href="strategy.html">Implementation Strategy</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="programs.html">Programs</a>
+              <a class="nav-link" href="program.html">Programs</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="ark.html">Ark Partners</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="gallery.html">Gallery</a>
+              <a class="nav-link" href="gallery.html">Gallery</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="contact.html">Contact</a>
@@ -144,83 +140,50 @@
     </nav>
   </header>
 
-  <!-- Gallery Section -->
-  <section class="gallery-section">
+  <!-- Donations Section -->
+  <section class="donations-section">
     <div class="container">
-      <h2>Gallery</h2>
+      <h2>Support Our Cause</h2>
       <div class="row">
-        <!-- Gallery Item 1 -->
-        <div class="col-md-4">
-          <div class="gallery-item">
-            <a href="img1.jpg" data-lightbox="gallery" data-title="Image 1">
-              <img src="images/img1.jpg" alt="Image 1">
-              <div class="overlay">
-                <i class="fas fa-search-plus"></i>
-              </div>
-            </a>
+        <!-- One-Time Donation -->
+        <div class="col-md-4 mb-4">
+          <div class="donation-card">
+            <i class="fas fa-hand-holding-heart donation-icon"></i> <!-- Font Awesome icon -->
+            <h3 class="donation-title">One-Time Donation</h3>
+            <p class="donation-description">
+              Make a one-time contribution to support our programs and initiatives. Every donation makes a difference!
+            </p>
+            <button class="btn btn-donate">Donate Now</button>
           </div>
         </div>
-        <!-- Gallery Item 2 -->
-        <div class="col-md-4">
-          <div class="gallery-item">
-            <a href="img2.jpg" data-lightbox="gallery" data-title="Image 2">
-              <img src="images/img2.jpg" alt="Image 2">
-              <div class="overlay">
-                <i class="fas fa-search-plus"></i>
-              </div>
-            </a>
+        <!-- Monthly Donation -->
+        <div class="col-md-4 mb-4">
+          <div class="donation-card">
+            <i class="fas fa-calendar-alt donation-icon"></i> <!-- Font Awesome icon -->
+            <h3 class="donation-title">Monthly Donation</h3>
+            <p class="donation-description">
+              Become a monthly donor and help us sustain our efforts over time. Your ongoing support is invaluable.
+            </p>
+            <button class="btn btn-donate">Donate Monthly</button>
           </div>
         </div>
-        <!-- Gallery Item 3 -->
-        <div class="col-md-4">
-          <div class="gallery-item">
-            <a href="img3.jpg" data-lightbox="gallery" data-title="Image 3">
-              <img src="images/img3.jpg" alt="Image 3">
-              <div class="overlay">
-                <i class="fas fa-search-plus"></i>
-              </div>
-            </a>
-          </div>
-        </div>
-        <!-- Gallery Item 4 -->
-        <div class="col-md-4">
-          <div class="gallery-item">
-            <a href="img4.jpg" data-lightbox="gallery" data-title="Image 4">
-              <img src="images/img4.jpg" alt="Image 4">
-              <div class="overlay">
-                <i class="fas fa-search-plus"></i>
-              </div>
-            </a>
-          </div>
-        </div>
-        <!-- Gallery Item 5 -->
-        <div class="col-md-4">
-          <div class="gallery-item">
-            <a href="img5.jpg" data-lightbox="gallery" data-title="Image 5">
-              <img src="images/img5.jpg" alt="Image 5">
-              <div class="overlay">
-                <i class="fas fa-search-plus"></i>
-              </div>
-            </a>
-          </div>
-        </div>
-        <!-- Gallery Item 6 -->
-        <div class="col-md-4">
-          <div class="gallery-item">
-            <a href="img6.jpg" data-lightbox="gallery" data-title="Image 6">
-              <img src="images/img6.jpg" alt="Image 6">
-              <div class="overlay">
-                <i class="fas fa-search-plus"></i>
-              </div>
-            </a>
+        <!-- Sponsor a Project -->
+        <div class="col-md-4 mb-4">
+          <div class="donation-card">
+            <i class="fas fa-hands-helping donation-icon"></i> <!-- Font Awesome icon -->
+            <h3 class="donation-title">Sponsor a Project</h3>
+            <p class="donation-description">
+              Sponsor a specific project or initiative and see the direct impact of your contribution.
+            </p>
+            <button class="btn btn-donate">Sponsor Now</button>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-   <!-- Footer Section -->
-   <footer style="background-color: #333; color: #fff; padding: 20px 0; text-align: center;">
+  <!-- Footer Section -->
+  <footer style="background-color: #333; color: #fff; padding: 20px 0; text-align: center;">
     <div style="max-width: 1200px; margin: 0 auto;">
       <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
         <div style="flex: 1; min-width: 200px; margin: 10px;">
@@ -230,10 +193,14 @@
         <div style="flex: 1; min-width: 200px; margin: 10px;">
           <h3 style="color: #fff;">Quick Links</h3>
           <ul style="list-style: none; padding: 0;">
-            <li><a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Home</a></li>
-            <li><a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Services</a></li>
-            <li><a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Blog</a></li>
-            <li><a href="#" style="color: #ccc; text-decoration: none; font-size: 14px;">Contact</a></li>
+            <li><a href="index.html" style="color: #ccc; text-decoration: none; font-size: 14px;">Home</a></li>
+            <li><a href="about.html" style="color: #ccc; text-decoration: none; font-size: 14px;">About</a></li>
+            <li><a href="strategy.html" style="color: #ccc; text-decoration: none; font-size: 14px;">Implementation Strategy</a></li>
+            <li><a href="program.html" style="color: #ccc; text-decoration: none; font-size: 14px;">Programs</a></li>
+            <li><a href="ark.html" style="color: #ccc; text-decoration: none; font-size: 14px;">Ark Partners</a></li>
+            <li><a href="gallery.html" style="color: #ccc; text-decoration: none; font-size: 14px;">Gallery</a></li>
+            <li><a href="contact.html" style="color: #ccc; text-decoration: none; font-size: 14px;">Contact</a></li>
+            <li><a href="donate.html" style="color: #ccc; text-decoration: none; font-size: 14px;">Donate</a></li>
           </ul>
         </div>
         <div style="flex: 1; min-width: 200px; margin: 10px;">
@@ -251,7 +218,7 @@
     </div>
   </footer>
 
-  <!-- Bootstrap JS -->
+  <!-- Bootstrap JS (with Popper.js) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
